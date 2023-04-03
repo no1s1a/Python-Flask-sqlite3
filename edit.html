@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Редактировать данные</h1>
+    <form method="POST">
+        <input type="text" name="NN" placeholder="NN" value="{{ zamer.NN }}" required>
+        <input type="text" name="NAME" placeholder="NAME" value="{{ zamer.NAME }}" required>
+        <input type="text" name="mFreeMB" placeholder="mFreeMB" value="{{ zamer.mFreeMB }}" required>
+        <!-- Добавьте остальные поля здесь -->
+        <button type="submit">Сохранить изменения</button>
+    </form>
+{% endblock %}
