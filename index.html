@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Главная</h1>
+    <table>
+        <tr>
+            <th>NN</th>
+            <th>NAME</th>
+            <th>mFreeMB</th>
+            <!-- Добавьте остальные заголовки столбцов здесь -->
+            <th>dateZ</th>
+            <th>UserZ</th>
+            <th>date</th>
+        </tr>
+        {% for zamer in zamers %}
+        <tr>
+            <td>{{ zamer.NN }}</td>
+            <td>{{ zamer.NAME }}</td>
+            <td>{{ zamer.mFreeMB }}</td>
+            <!-- Добавьте остальные данные столбцов здесь -->
+            <td>{{ zamer.dateZ }}</td>
+            <td>{{ zamer.UserZ }}</td>
+            <td>{{ zamer.date }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="{{ url_for('logout') }}">Выйти</a>
+{% endblock %}
