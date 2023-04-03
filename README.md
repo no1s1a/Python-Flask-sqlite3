@@ -4,3 +4,21 @@
 2. Создайте новую папку проекта и в ней файл app.py
 3. Создайте файлы шаблонов login.html, register.html и index.html в папке templates
 4. Создайте файл base.html в папке templates
+5. Запустите app.py, и он создаст базу данных SQLite и запустит сервер.
+6. Теперь вы можете добавить, удалить и редактировать данные, создав маршруты и функции для каждого из этих действий. Пример маршрута для добавления данных:
+@app.route('/add', methods=['GET', 'POST'])
+@login_required
+def add():
+    if request.method == 'POST':
+        NN = request.form['NN']
+        NAME = request.form['NAME']
+        mFreeMB = request.form['mFreeMB']
+        # ... добавьте остальные данные здесь
+        UserZ = current_user.username
+        new_zamer = Zamer(NN=NN, NAME=NAME, mFreeMB=mFreeMB, UserZ=UserZ)
+        db.session.add(new_zamer)
+        db.session.commit()
+        return redirect(url_for('index'))
+    return render_template('add.html')
+        
+7. Создайте файл шаблона add.html в папке templates
