@@ -22,3 +22,12 @@ def add():
     return render_template('add.html')
         
 7. Создайте файл шаблона add.html в папке templates
+8. Добавьте маршруты и функции для удаления и редактирования данных по аналогии с добавлением данных. Например, для удаления данных:
+@app.route('/delete/<int:id>')
+@login_required
+def delete(id):
+    zamer = Zamer.query.get_or_404(id)
+    db.session.delete(zamer)
+    db.session.commit()
+    return redirect(url_for('index'))
+    9. Для редактирования данных создайте маршрут и функцию edit:
