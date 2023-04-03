@@ -3,3 +3,4 @@
 1. Установите Flask и другие необходимые библиотеки
 2. Создайте новую папку проекта и в ней файл app.py
 3. Создайте файлы шаблонов login.html, register.html и index.html в папке templates
+4. Создайте файл base.html в папке templates
