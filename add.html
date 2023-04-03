@@ -1,1 +1,12 @@
+{% extends "base.html" %}
 
+{% block content %}
+    <h1>Добавить данные</h1>
+    <form method="POST">
+        <input type="text" name="NN" placeholder="NN" required>
+        <input type="text" name="NAME" placeholder="NAME" required>
+        <input type="text" name="mFreeMB" placeholder="mFreeMB" required>
+        <!-- Добавьте остальные поля здесь -->
+        <button type="submit">Добавить</button>
+    </form>
+{% endblock %}
